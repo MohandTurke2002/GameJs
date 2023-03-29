@@ -1,0 +1,77 @@
+.icons {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 0 0 #1a19198a, inset 0 9px 0 0 #201f1f54;
+}
+
+.icons.myrock {
+  border: 20px solid hsl(349, 70%, 56%);
+  background-image: url("./Images/icon-rock.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icons.mypaper {
+  border: 20px solid hsl(230, 89%, 65%);
+  background-image: url("./Images/icon-paper.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icons.myscissors {
+  border: 20px solid hsl(40, 84%, 53%);
+  background-image: url("./Images/icon-scissors.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.comp-res {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.mychois {
+  text-align: center;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.computerchois {
+  text-align: center;
+}
+
+.cont > p {
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0;
+  align-self: flex-end;
+  font-size: 60px;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+}
+
+.playagain {
+  align-self: flex-start;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  width: fit-content;
+  padding: 15px 40px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}

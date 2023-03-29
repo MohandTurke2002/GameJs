@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding-top: 30px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  height: calc(100vh - 30px);
+  background-image: radial-gradient(circle at top, #1f3757fa, #151b3d);
+}
+#root {
+  height: 100%;
+}

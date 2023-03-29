@@ -1,0 +1,84 @@
+.game {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-icon {
+  width: fit-content;
+  height: fit-content;
+  background-image: url('./Images/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+a {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:last-child {
+  width: 100% !important;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  background-color: white;
+  border-radius: 50%;
+  padding: 25px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 0 0 #1a19198a, inset 0 9px 0 0 #201f1f54;
+
+}
+
+.icon:hover {
+  transform: perspective(100px) translate3d(0px, 0px, 10px);
+  transition: 0.3s linear;
+}
+
+.icon.rock {
+  border: 20px solid hsl(349, 70%, 56%);
+}
+.icon.paper {
+  border: 20px solid hsl(230, 89%, 65%);
+}
+.icon.scissors {
+  border: 20px solid hsl(40, 84%, 53%);
+}
+
+@media screen and (max-width: 767px) {
+  .game {
+    width: 100% !important;
+  }
+  .container-icon {
+    width: 100% !important;
+    height: 100% !important;
+    justify-content: space-between !important;
+  }
+  a {
+    width: 35% !important;
+  }
+  .icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+@media screen and (min-width: 406px) and (max-width: 767px) {
+  .container-icon {
+    justify-content: center !important;
+  }
+}
