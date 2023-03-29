@@ -60,7 +60,7 @@ const CompRes = ({ myChoise, score, setScore }) => {
       </div>
       <div className="cont computerchois">
         <p>Computer Chois</p>
-        <div className={`icons my${myComputerChoise}`}></div>
+        <div className={`icons pc${myComputerChoise}`}></div>
       </div>
     </div>
   );
