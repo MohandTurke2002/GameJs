@@ -19,7 +19,7 @@ const Game = ({ setMyChoise }) => {
             className="icon rock"
             onClick={(e) => setChoise(e)}
           >
-            <img src={Rock} />
+            <img data-id="rock" src={Rock} onClick={(e) => setChoise(e)} />
           </div>
         </Link>
         <Link to="/src/Components/Comp&Res/CompRes.js">
@@ -28,7 +28,7 @@ const Game = ({ setMyChoise }) => {
             className="icon paper"
             onClick={(e) => setChoise(e)}
           >
-            <img src={Papper} />
+            <img data-id="paper" src={Papper} onClick={(e) => setChoise(e)} />
           </div>
         </Link>
         <Link to="/src/Components/Comp&Res/CompRes.js">
@@ -37,7 +37,11 @@ const Game = ({ setMyChoise }) => {
             className="icon scissors"
             onClick={(e) => setChoise(e)}
           >
-            <img src={Scissors} />
+            <img
+              data-id="scissors"
+              src={Scissors}
+              onClick={(e) => setChoise(e)}
+            />
           </div>
         </Link>
       </div>
