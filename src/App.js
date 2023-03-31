@@ -8,16 +8,25 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [myChoise, setMyChoise] = useState("");
   const [score, setScore] = useState(0);
+  let handleNewChoise = (newChoise) => {
+    return setMyChoise(newChoise);
+  };
+  let handleNewScore = (newScore) => {
+    return setScore(newScore);
+  };
   return (
     <div className="App">
       <HeaderScore score={score} />
       <Router>
         <Routes>
-          <Route path="/" element={<Game setMyChoise={setMyChoise} />} />
+          <Route
+            path="/"
+            element={<Game handleNewChoise={handleNewChoise} />}
+          />
           <Route
             path="/src/Components/Comp&Res/CompRes.js"
             element={
-              <CompRes myChoise={myChoise} score={score} setScore={setScore} />
+              <CompRes myChoise={myChoise} handleNewScore={handleNewScore} />
             }
           />
         </Routes>

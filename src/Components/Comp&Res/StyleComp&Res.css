@@ -81,6 +81,7 @@ h1 {
     width: 100% !important;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-self: flex-start;
   }
   .icons {
     width: 50px !important;
@@ -97,6 +98,6 @@ h1 {
   }
   .result {
     position: absolute;
-    bottom: 100px;
+    bottom: 25px;
   }
 }

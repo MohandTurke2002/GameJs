@@ -6,9 +6,9 @@ import Papper from "./Images/icon-paper.svg";
 import Scissors from "./Images/icon-scissors.svg";
 
 import "./Style-Game.css";
-const Game = ({ setMyChoise }) => {
+const Game = ({ handleNewChoise }) => {
   let setChoise = (e) => {
-    setMyChoise(e.target.dataset.id);
+    handleNewChoise(e.target.dataset.id);
   };
   return (
     <div className="game">

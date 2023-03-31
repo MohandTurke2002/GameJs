@@ -1,37 +1,45 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./StyleComp&Res.css";
-const CompRes = ({ myChoise, score, setScore }) => {
+const CompRes = ({ myChoise, handleNewScore }) => {
   const [myComputerChoise, setMyComputerChoise] = useState("");
-  const [howWin, setHowWin] = useState("");
+  const [whoWins, setWhoWins] = useState("");
+  const choise = {
+    rock: {
+      weakerThan: "paper",
+      strongerThan: "scissors",
+    },
+    paper: {
+      weakerThan: "scissors",
+      strongerThan: "rock",
+    },
+    scissors: {
+      weakerThan: "rock",
+      strongerThan: "paper",
+    },
+  };
   const computerChoise = () => {
-    const choise = ["rock", "paper", "scissors"];
-    setMyComputerChoise(choise[Math.floor(Math.random() * choise.length)]);
+    const choisArr = Object.keys(choise);
+    const randomEle = Math.floor(Math.random() * choisArr.length);
+    setMyComputerChoise(choisArr[randomEle]);
   };
   useEffect(() => {
     computerChoise();
   }, []);
   const compare = () => {
-    if (myChoise === "paper" && myComputerChoise === "rock") {
-      setHowWin("You win");
-      setScore(score + 1);
-    } else if (myChoise === "scissors" && myComputerChoise === "paper") {
-      setHowWin("You win");
-      setScore(score + 1);
-    } else if (myChoise === "rock" && myComputerChoise === "scissors") {
-      setHowWin("You win");
-      setScore(score + 1);
-    } else if (myChoise === "scissors" && myComputerChoise === "rock") {
-      setHowWin("You lose");
-      setScore(score - 1);
-    } else if (myChoise === "rock" && myComputerChoise === "paper") {
-      setHowWin("You lose");
-      setScore(score - 1);
-    } else if (myChoise === "paper" && myComputerChoise === "scissors") {
-      setHowWin("You lose");
-      setScore(score - 1);
+    if (choise[myChoise].strongerThan === myComputerChoise) {
+      setWhoWins("You win");
+      handleNewScore((oldVal) => {
+        return ++oldVal;
+      });
+    } else if (choise[myChoise].weakerThan === myComputerChoise) {
+      setWhoWins("You lose");
+      handleNewScore((oldVal) => {
+        return --oldVal;
+      });
     } else {
-      setHowWin("Draw");
+      setWhoWins("Draw");
     }
   };
   useEffect(() => {
@@ -45,14 +53,10 @@ const CompRes = ({ myChoise, score, setScore }) => {
         <div className={`icons my${myChoise}`}></div>
       </div>
       <div className="result">
-        <h1>
-          {howWin === "You win" && <span> {howWin} </span>}
-          {howWin === "You lose" && <span> {howWin} </span>}
-          {howWin === "Draw" && <span> {howWin} </span>}
-        </h1>
+        <h1>{whoWins && <span> {whoWins} </span>}</h1>
         <Link
           to="/"
-          onClick={() => setMyComputerChoise()}
+          onClick={() => setMyComputerChoise("")}
           className="playagain"
         >
           Play Again
