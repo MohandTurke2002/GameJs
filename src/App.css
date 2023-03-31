@@ -5,3 +5,9 @@
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
+/* @media screen and (max-width: 767px) {
+  .App {
+    display: block;
+  }
+} */
